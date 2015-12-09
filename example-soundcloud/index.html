@@ -3,11 +3,22 @@
 
 <head>
     <title>AnguarJs SoundManager2 - SoundCloud</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <!-- Bootstrap Core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../css/sb-admin.css" rel="stylesheet">
+
+  <!-- Morris Charts CSS -->
+  <link href="../css/plugins/morris.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" style="background-color: white">
     <div class="container" ng-controller="MainCtrl">
         <div class="row">
             <div class="col-md-12">
@@ -15,12 +26,12 @@
                 <h5>Songs</h5>
                 <ul>
                     <li ng-repeat="song in songs">
-                        <button music-player="play" add-song="song">{{ song.title }}</button>
+                        <button class="btn btn-info" music-player="play" add-song="song">{{ song.title }}</button>
                         <button music-player add-song="song">+</button>
                     </li>
                 </ul>
 
-                <button play-all="songs">Play all</button>
+                <button class="btn btn-info" play-all="songs">Play all</button>
 
             </div>
         </div>
@@ -40,31 +51,31 @@
                     <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
                 </div>
                 <br />
-                <button play-music>Play</button>
+                <button play-music class="btn btn-success">Play</button>
                 -
-                <button pause-music>Pause</button>
+                <button pause-music class="btn btn-warning">Pause</button>
                 -
-                <button stop-music>Stop</button>
+                <button stop-music class="btn btn-danger">Stop</button>
                 -
-                <button repeat-music>Repeat ({{ repeat }})</button>
+                <button repeat-music class="btn btn-default">Repeat ({{ repeat }})</button>
                 -
-                <button play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
+                <button play-pause-toggle data-play="Play!" data-pause="Pause!" class="btn btn-info">Play Toggle</button>
 
                 Is Playing: {{ isPlaying }}
                 <br/>
                 <br/>Volume: {{ volume }} -
-                <button music-volume data-type="increase">+</button>
+                <button music-volume data-type="increase" class="btn btn-info">+</button>
                 -
-                <button music-volume data-type="decrease">-</button>
+                <button music-volume data-type="decrease" class="btn btn-info">-</button>
                 -
-                <button mute-music>Mute ({{ mute }})</button>
+                <button class="btn btn-danger" mute-music>Mute ({{ mute }})</button>
                 <br/>
                 <br/>
-                <button prev-track>Prev Track</button>
+                <button prev-track class="btn btn-info">Prev Track</button>
                 -
-                <button next-track>Next Track</button>
+                <button next-track class="btn btn-info">Next Track</button>
                 -
-                <button clear-playlist>Clear Playlist</button>
+                <button clear-playlist class="btn btn-info">Clear Playlist</button>
                 <br/>
                 <br/>
                 <h5>Playlist</h5>
@@ -81,11 +92,16 @@
             </div>
         </div>
     </div>
-    
-    <script src="//connect.soundcloud.com/sdk.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="../dist/angular-soundmanager2.js"></script>
     <script src="app.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/plugins/morris/raphael.min.js"></script>
+    <script src="../js/plugins/morris/morris.min.js"></script>
+    <script src="../js/plugins/morris/morris-data.js"></script>
 </body>
 
 </html>
